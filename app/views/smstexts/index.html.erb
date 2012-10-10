@@ -1,0 +1,25 @@
+<h1>Listing smstexts</h1>
+
+<table>
+  <tr>
+    <th>Recipient</th>
+    <th>Smsmessage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @smstexts.each do |smstext| %>
+  <tr>
+    <td><%= smstext.recipient %></td>
+    <td><%= smstext.smsmessage %></td>
+    <td><%= link_to 'Show', smstext %></td>
+    <td><%= link_to 'Edit', edit_smstext_path(smstext) %></td>
+    <td><%= link_to 'Destroy', smstext, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Smstext', new_smstext_path %>
